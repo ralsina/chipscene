@@ -21,6 +21,7 @@ except:
     print "Error loading polygon. More info at http://www.dezentral.de/soft/Polygon/"
     sys.exit(1)
 
+import random
 
 USEOPENGL=True
 
@@ -45,27 +46,15 @@ class MainWindow(QtGui.QMainWindow):
 
 def fillWorld(scene):
     items=[]
-    b1=cs.CPBodyItem(bpos=[50, 50],m=100)
-    b2=cs.CPBodyItem(bpos=[100, 50],m=300)
-    b3=cs.CPBodyItem(bpos=[150, 50],m=500)
-    s1=cs.CPCircleShapeItem(20, b1, e=.5, offset=[0, 0])
-    s2=cs.CPCircleShapeItem(20, b2, e=.5, offset=[0, 0])
-    s3=cs.CPCircleShapeItem(20, b3, e=.5, offset=[0,0])
-    p1=cs.CPSlideJoint([10, 0], [-10, 0],b1, b2, 20, 40)
-    p2=cs.CPPinJoint([5, 5],[-10, 0], b2, b3)
-    f1=cs.CPSegmentShapeItem([-200, 250], [400, 350], 1, None, e=.7, u=1)
-    f2=cs.CPSegmentShapeItem([400, 150], [-200, 450], 1, None, e=.7, u=1)
-    for i in b1, b2,b3,  s1, s2,s3,  p1, p2, f1, f2:
-        scene.addItem(i)
-
-    for x in range(1, 5):
-        b=cs.CPBodyItem(bpos=[50+20*x, 10-50*x],m=1000)
-        cs.CPCircleShapeItem(10, b, e=0, offset=[0, -60])
-        s=cs.CPPolyShapeItem(polyStar(radius=20, nodes=4), b, e=.3, u=.5)
-        QtGui.QGraphicsSimpleTextItem(str(x), s)
+    for x in range(1, 29):
+        b=cs.CPBodyItem(bpos=[0+13*random.randint(0,25), -50-30*random.randint(0,10)],m=10)
+        s=cs.CPCircleShapeItem(10, b, e=.5, offset=[0, 0])
+        t=QtGui.QGraphicsSimpleTextItem(str(x), s)
+        t.setPos(-5, -5)
         items.append(b)
-    for x in range(1, 10):
-        items.append(cs.CPCircleShapeItem(10, None, e=.7, offset=[-120+x*95, 130]))
+    items.append(cs.CPSegmentShapeItem([0, 50], [500, 450], 1, None, e=.7))
+    items.append(cs.CPSegmentShapeItem([0, 450], [500, 50], 1, None, e=.7))
+
     for i in items:
         scene.addItem(i)
 
