@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Project SYSTEM "Project-4.0.dtd">
+<!-- eric4 project file for project chipscene -->
+<!-- Saved: 2007-09-12, 08:52:54 -->
+<!-- Copyright (C) 2007 Roberto Alsina, ralsina@kde.org -->
+<Project version="4.0">
+  <ProgLanguage mixed="0">Python</ProgLanguage>
+  <UIType>Qt4</UIType>
+  <Description>A QGraphicsScene with physics properties (implemented using Chipmunk)</Description>
+  <Version>0.1</Version>
+  <Author>Roberto Alsina</Author>
+  <Email>ralsina@kde.org</Email>
+  <Sources>
+    <Source>
+      <Name>main.py</Name>
+    </Source>
+    <Source>
+      <Name>main.ui</Name>
+    </Source>
+    <Source>
+      <Name>levels.py</Name>
+    </Source>
+    <Source>
+      <Name>icons.qrc</Name>
+    </Source>
+    <Source>
+      <Name>Ui_main.py</Name>
+    </Source>
+    <Source>
+      <Dir>pymunk</Dir>
+      <Name>__init__.py</Name>
+    </Source>
+    <Source>
+      <Dir>pymunk</Dir>
+      <Name>_chipmunk.py</Name>
+    </Source>
+    <Source>
+      <Dir>pymunk</Dir>
+      <Name>util.py</Name>
+    </Source>
+    <Source>
+      <Dir>pymunk</Dir>
+      <Name>vec2d.py</Name>
+    </Source>
+    <Source>
+      <Name>chipscene.py</Name>
+    </Source>
+  </Sources>
+  <Forms>
+    <Form>
+      <Name>main.ui</Name>
+    </Form>
+  </Forms>
+  <Translations>
+  </Translations>
+  <Resources>
+    <Resource>
+      <Name>icons.qrc</Name>
+    </Resource>
+  </Resources>
+  <Interfaces>
+  </Interfaces>
+  <Others>
+    <Other>
+      <Name>pymunk</Name>
+    </Other>
+    <Other>
+      <Name>icons</Name>
+    </Other>
+  </Others>
+  <Vcs>
+    <VcsType>None</VcsType>
+  </Vcs>
+  <FiletypeAssociations>
+    <FiletypeAssociation pattern="*.ui" type="FORMS" />
+    <FiletypeAssociation pattern="*.idl" type="INTERFACES" />
+    <FiletypeAssociation pattern="*.ptl" type="SOURCES" />
+    <FiletypeAssociation pattern="*.pyw" type="SOURCES" />
+    <FiletypeAssociation pattern="*.ui.h" type="FORMS" />
+    <FiletypeAssociation pattern="*.py" type="SOURCES" />
+    <FiletypeAssociation pattern="*.qrc" type="RESOURCES" />
+  </FiletypeAssociations>
+</Project>
